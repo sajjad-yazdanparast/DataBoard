@@ -8,7 +8,7 @@ st.set_page_config(
 )
 st.sidebar.title('DataBases')
 
-cnx = get_connection(user='sajjad_quera', password='P@ssword1401', host='127.0.0.1')
+cnx = get_connection(user=st.secrets.db_username, password=st.secrets.db_password, host=st.secrets.db_host)
 
 if 'databases' not in st.session_state :
     databases = [db[0] for db in get_database_names(cnx)]
